@@ -4,13 +4,13 @@ cd $GIT_DIR/..
 unset GIT_DIR GIT_WORK_TREE
 
 while read OLD NEW REF; do
-    [ $REF != refs/heads/deploy ] && continue
-    [ $NEW == 0000000000000000000000000000000000000000 ] && continue
-    echo -e '\x1b[33;1mAuto-deploying on' $(hostname) '\x1b[0m' >&2
-    # build new tree
-    git read-tree -m --aggressive "$NEW:" || exit
-    git checkout-index -a -f || exit
-    git commit --allow-empty --untracked-files=no \
-               -m "Deployed commit $(git rev-parse --short $NEW)" || exit
-    # hook into your own post-deploy phase here
+  [ $REF != refs/heads/deploy ] && continue
+  [ $NEW == 0000000000000000000000000000000000000000 ] && continue
+  echo -e '\x1b[33;1mAuto-deploying on' $(hostname) '\x1b[0m' >&2
+  # build new tree
+  git read-tree -m --aggressive "$NEW:" || exit
+  git checkout-index -a -f || exit
+  git commit --allow-empty --untracked-files=no \
+             -m "Deployed commit $(git rev-parse --short $NEW)" || exit
+  # hook into your own post-deploy phase here
 done
