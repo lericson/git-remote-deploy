@@ -2,9 +2,7 @@
 
 ![git-remot-deploy example](http://bsg.lericson.se/git-remote-deploy.gif)
 
-Small and large teams alike, there is no question people want Git for deployment. I do not condone this as a method of release management. If your development team has any kind of resources, you should look into release tools like Capistrano, Phing, Fabric, or whatever the flavor of the month is.
-
-For us, the 99%, there are dirt jobs, campaign sites, and quick hacks. These are better off with a simple, straight-forward solution. This is my take.
+Small and large teams alike, there is no question people want Git for deployment. This glorified Git post-receive hook unpacks whatever tree you push to the `deploy` branch.
 
 Let's get started!
 
@@ -14,6 +12,8 @@ Let's get started!
     [follow instructions]
     $ git push deploy
     BADABING!
+
+While not a wholesale solution for anything but the simplest of projects, it can serve as a decent substrate for making more complicated deployment setups.
 
 ### Retrying a Deploy
 
