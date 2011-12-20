@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# usage: setup-remote <remote> <url>
+
+SRC="$(dirname $0)"
+REMOTE="$1"
+URL="$2"
+
+[ -z "$REMOTE" -o -z "$URL" ] && exit 1
+
+echo "Copying post-receive hook to $REMOTE"
+scp -p "$SRC/hook" "$URL/.git/hooks/post-receive" || exit
+echo
+
+echo "Configuring local repository's $REMOTE remote"
+git config remote.$REMOTE.url "$URL"
+git config remote.$REMOTE.push "+$(git symbolic-ref HEAD):refs/heads/deploy"
