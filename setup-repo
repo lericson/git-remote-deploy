@@ -5,6 +5,7 @@
 # execute from the root of repository
 
 TARGET_FILE=$0
+WORK_DIR=`pwd -P`
 cd `dirname $TARGET_FILE`
 TARGET_FILE=`basename $TARGET_FILE`
 
@@ -37,6 +38,7 @@ if [ -z "$URL" ]; then
     echo
 fi
 
+cd $WORK_DIR
 "$SRC/setup-remote" "$NAME" "$URL"
 echo
 echo -e "\x1b[32\x6dAll set up!\x1b[0\x6d Try it:"
