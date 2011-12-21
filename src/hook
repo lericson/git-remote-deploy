@@ -12,5 +12,9 @@ while read OLD NEW REF; do
   git checkout-index -a -f || exit
   git commit --allow-empty --untracked-files=no \
              -m "Deployed commit $(git rev-parse --short $NEW)" || exit
-  # hook into your own post-deploy phase here
+  # run any post-deploy scripts found in deploy/
+  if [ -d "deploy" ]; then
+    echo -e '\x1b[33;1mRunning post-deploy scripts\x1b[0m' >&2
+    find deploy -type f -perm +0111 -exec {} \;
+  fi
 done
