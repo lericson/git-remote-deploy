@@ -4,7 +4,7 @@
 # usage: setup-repo [deploy url]
 # execute from the root of repository
 
-SRC="$(dirname $0)/src"
+SRC="$0/../src"
 GIT_DIR="$(git rev-parse --git-dir)"
 
 NAME="deploy"

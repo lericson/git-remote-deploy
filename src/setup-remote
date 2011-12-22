@@ -2,7 +2,7 @@
 
 # usage: setup-remote <remote> <url>
 
-SRC="$(dirname $0)"
+SRC="$0/.."
 REMOTE="$1"
 URL="$2"
 
