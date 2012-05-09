@@ -1,6 +1,6 @@
 # Automatic Deploy with Git
 
-![git-remot-deploy example](http://bsg.lericson.se/git-remote-deploy.gif)
+![git-remot-deploy example](http://bsg.lericson.se/git-remote-deploy2.gif)
 
 Small and large teams alike, there is no question people want Git for deployment. This glorified Git post-receive hook unpacks whatever tree you push to a remote `deploy` branch.
 
