@@ -69,4 +69,4 @@ The more sensible thing to do, which doesn't deploy the previous version, is to 
 
 Open up `src/hook` and go nuts -- there are helpful comments in there. The hook is spartan by intent: the aim is not to tell you how to do your job, but rather to help you get it done.
 
-If you find that your project's architectural needs are outgrowing simple Git pushes, you might want to try [Capistrano](http://https://github.com/capistrano/capistrano/) or something like that.
+If you find that your project's architectural needs are outgrowing simple Git pushes, you might want to try [Capistrano](https://github.com/capistrano/capistrano/) or something like that.
